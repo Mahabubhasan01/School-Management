@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}Student-Form{% endblock title %} 
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %} {% for fm in form %}
+  <div class="form-group mb-3">
+   <label for=""class="form-label"> {{fm.label_tag}}</label>{{fm}}
+    <small class="text-warning">{{fm.errors|striptags}}</small>
+  </div>
+  {% endfor %}
+  <input class="btn btn-primary" type="submit" value="Next" />
+</form>
+{% endblock content %}

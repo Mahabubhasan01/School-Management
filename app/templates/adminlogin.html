@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% load static %}{% block css %}<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock css %} {% block content %}
+<header class="top-header"></header>
+
+<div id="mainCoantiner">
+  <div class="main-header">
+    <div class="header-social">
+      <ul>
+        <li><a id="nmberone">1</a></li>
+        <li><a id="nmbertwo">2</a></li>
+        <li><a id="numberthree">3</a></li>
+        <li><a>4</a></li>
+      </ul>
+    </div>
+    <div class="folio-btn">
+      <a
+        class="folio-btn-item ajax"
+        href="https://bit.ly/2y6huFG"
+        target="_blank"
+        ><span class="folio-btn-dot"></span><span class="folio-btn-dot"></span
+        ><span class="folio-btn-dot"></span><span class="folio-btn-dot"></span
+        ><span class="folio-btn-dot"></span><span class="folio-btn-dot"></span
+        ><span class="folio-btn-dot"></span><span class="folio-btn-dot"></span
+        ><span class="folio-btn-dot"></span
+      ></a>
+    </div>
+  </div>
+
+  <!--dust particel-->
+  <div>
+    <div class="starsec"></div>
+    <div class="starthird"></div>
+    <div class="starfourth"></div>
+    <div class="starfifth"></div>
+  </div>
+
+  <div class="container text-center text-dark mt-5">
+    <div class="row">
+      <div class="col-lg-4 d-block mx-auto mt-5">
+        <div class="row">
+          <div class="col-xl-12 col-md-12 col-md-12">
+            <div class="card">
+              <div class="card-body wow-bg" id="formBg">
+                <h3 class="colorboard">Login</h3>
+
+                <p class="text-muted">Sign In to your account</p>
+
+               {% comment %}  <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control textbox-dg"
+                    placeholder="Username"
+                  />
+                </div>
+                <div class="input-group mb-4">
+                  <input
+                    type="password"
+                    class="form-control textbox-dg"
+                    placeholder="Password"
+                  />
+                </div> {% endcomment %}
+
+
+
+
+
+
+                <form action="" method="POST" class="">
+                  {% csrf_token %} {% for fm in form %}
+                  <div class="input-group mb-4">
+                    <span
+                      class="form-control textbox-dg"
+                      >{{fm}}</span
+                    ><span class='text-red-700'>{{fm.erros|striptags}}</span>
+                  </div>
+                  {% endfor %}
+                  <div class="row">
+                    <div class="col-12">
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-block logn-btn"
+                      >
+                        <input class='' type="submit" value="Submit">
+                      </button>
+                    </div>
+                </form>
+                  <div class="col-12">
+                    <a
+                      href="{%url 'change_password'%}"
+                      class="btn btn-link box-shadow-0 px-0"
+                      >Forgot password?</a
+                    >
+                    <a
+                      href="{% url 'Admin_Form' %}"
+                      class="btn btn-link box-shadow-0 px-0"
+                      >Register Here</a
+                    >
+                  </div>
+                </div>
+
+                <div class="mt-6 btn-list">
+                  <button
+                    type="button"
+                    class="socila-btn btn btn-icon btn-facebook fb-color"
+                  >
+                    <i class="fab fa-facebook-f faa-ring animated"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="socila-btn btn btn-icon btn-google incolor"
+                  >
+                    <i class="fab fa-linkedin-in faa-flash animated"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="socila-btn btn btn-icon btn-twitter tweetcolor"
+                  >
+                    <i class="fab fa-twitter faa-shake animated"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="socila-btn btn btn-icon btn-dribbble driblecolor"
+                  >
+                    <i class="fab fa-dribbble faa-pulse animated"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/login.js'%}"></script>
+{% endblock content %}

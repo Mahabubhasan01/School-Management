@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="" method="POST" novalidate  id='userstudentform' autocomplete=off>
+  {% csrf_token %}
+  {% for fm in form %}
+      <div class="form-group">
+        <span class=''>{{fm.label_tag}}</span> {{fm}}
+        <small class="text-warning">{{fm.errors|striptags}}</small>
+      </div>
+  {% endfor %}
+  <input class='btn btn-primary' type="submit" value="Submit">
+</form>
+{% endblock content %}
