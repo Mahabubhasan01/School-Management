@@ -1,5 +1,4 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
 from .forms import StudentForm, user_student as user
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
@@ -7,6 +6,16 @@ from app.models import StudentRegisterForm, StaffRegisterForm
 from .forms import Login_Form
 from django.contrib.auth.models import User
 # Create your views here.
+
+from .models import *
+from datetime import datetime, date
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views import generic
+from django.utils.safestring import mark_safe
+
+from .models import *
+from .utils import Calendar
 
 
 def Base(request):
@@ -141,8 +150,35 @@ def Staff_Manager(request):
     print(context)
     return render(request, 'staffmanager.html', {'staffs': staffs})
 
+
 def Class_Manager(request):
     staffs = StaffRegisterForm.objects.all()
     context = {'staffs': staffs}
     print(context)
     return render(request, 'classmanager.html', {'staffs': staffs})
+
+
+class CalendarView(generic.ListView):
+    model = Event
+    template_name = 'calendar.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # use today's date for the calendar
+        d = get_date(self.request.GET.get('day', None))
+
+        # Instantiate our calendar class with today's year and date
+        cal = Calendar(d.year, d.month)
+
+        # Call the formatmonth method, which returns our calendar as a table
+        html_cal = cal.formatmonth(withyear=True)
+        context['calendar'] = mark_safe(html_cal)
+        return context
+
+
+def get_date(req_day):
+    if req_day:
+        year, month = (int(x) for x in req_day.split('-'))
+        return date(year, month, day=1)
+    return datetime.today()

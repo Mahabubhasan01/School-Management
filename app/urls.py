@@ -17,5 +17,12 @@ urlpatterns = [
     path('class_manager/', views.Class_Manager, name='class_manager'),
     path('staff_manager/', views.Staff_Manager, name='staff_manager'),
     path('dashboard/', views.user_dashboard, name='dashboard'),
+    path('calendar/', views.CalendarView.as_view(), name='calendar'),
 
 ]
+
+""" 
+urlpatterns = [
+    url(r'^index/$', views.index, name='index'),
+    url(r'^calendar/$', views.CalendarView.as_view(), name='calendar'),  # here
+] """
