@@ -1,8 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import StudentForm, user_student as user
-from django.contrib.auth.forms import AuthenticationForm, SetPasswordForm
+from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from .models import StudentRegisterForm
+from .forms import Login_Form
 # Create your views here.
 
 
@@ -38,8 +40,8 @@ def Dashboard(request):
     return render(request, 'dashboard.html')
 
 
-def user_login(request):
-    fm = AuthenticationForm(request=request, data=request.POST)
+def user_student_login(request):
+    fm = Login_Form(request=request, data=request.POST)
     if fm.is_valid():
         username = fm.cleaned_data['username']
         userpassword = fm.cleaned_data['password']
@@ -48,12 +50,12 @@ def user_login(request):
             login(request, usr)
             return HttpResponseRedirect('/dashboard/')
     else:
-        fm = AuthenticationForm()
+        fm = Login_Form()
     return render(request, 'login.html', {'form': fm})
 
 
 def user_admin_login(request):
-    fm = AuthenticationForm(request=request, data=request.POST)
+    fm = Login_Form(request=request, data=request.POST)
     if fm.is_valid():
         username = fm.cleaned_data['username']
         userpassword = fm.cleaned_data['password']
@@ -62,11 +64,12 @@ def user_admin_login(request):
             login(request, usr)
             return HttpResponseRedirect('/dashboard/')
     else:
-        fm = AuthenticationForm()
+        fm = Login_Form()
     return render(request, 'adminlogin.html', {'form': fm})
 
+
 def user_staff_login(request):
-    fm = AuthenticationForm(request=request, data=request.POST)
+    fm = Login_Form(request=request, data=request.POST)
     if fm.is_valid():
         username = fm.cleaned_data['username']
         userpassword = fm.cleaned_data['password']
@@ -75,9 +78,8 @@ def user_staff_login(request):
             login(request, usr)
             return HttpResponseRedirect('/dashboard/')
     else:
-        fm = AuthenticationForm()
+        fm = Login_Form()
     return render(request, 'stafflogin.html', {'form': fm})
-    
 
 
 def change_password(request):
@@ -113,5 +115,14 @@ def user_student(request):
 
 def user_profile(request):
     return render(request, 'profile.html')
+
+
 def user_dashboard(request):
     return render(request, 'dashboard.html')
+
+
+def Student_Manager(request):
+    student = StudentRegisterForm.objects.all()
+    context = {'student': student}
+    print(context)
+    return render(request, 'studentmanager.html', context)
