@@ -12,13 +12,16 @@
       href="{% static 'fontawesomefree/css/all.min.css' %}"
       rel="stylesheet"
       type="text/css"
-    />
+    />  
+
     {% block css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     {% endblock css %}
   </head>
   <body>
     {% block content %}{% endblock content %}
+    
+
     <script src="{% static 'js/home.js'%}"></script>
     <script src="{% static 'js/popper.js'%}"></script>
     <script src="{% static 'js/popper.js'%}"></script>

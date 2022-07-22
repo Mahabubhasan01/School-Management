@@ -14,6 +14,8 @@ urlpatterns = [
     path('admin_login/', views.user_admin_login, name='admin_login'),
     path('staff_login/', views.user_staff_login, name='staff_login'),
     path('student_manager/', views.Student_Manager, name='student_manager'),
+    path('class_manager/', views.Class_Manager, name='class_manager'),
+    path('staff_manager/', views.Staff_Manager, name='staff_manager'),
     path('dashboard/', views.user_dashboard, name='dashboard'),
 
 ]

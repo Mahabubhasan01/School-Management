@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .forms import StudentForm, user_student as user
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from app.models import StudentRegisterForm
+from app.models import StudentRegisterForm, StaffRegisterForm
 from .forms import Login_Form
 from django.contrib.auth.models import User
 # Create your views here.
@@ -116,11 +116,16 @@ def user_student(request):
 
 def user_profile(request):
     users = User.objects.all()
-    return render(request, 'profile.html',{'users': users})
+    return render(request, 'profile.html', {'users': users})
 
 
 def user_dashboard(request):
     return render(request, 'dashboard.html')
+
+
+def Navbar_Dashboard(request):
+    users = User.objects.all()
+    return render(request, 'navbardashboard.html', {'users': users})
 
 
 def Student_Manager(request):
@@ -128,3 +133,16 @@ def Student_Manager(request):
     context = {'student': student}
     print(context)
     return render(request, 'studentmanager.html', {'student': student})
+
+
+def Staff_Manager(request):
+    staffs = StaffRegisterForm.objects.all()
+    context = {'staffs': staffs}
+    print(context)
+    return render(request, 'staffmanager.html', {'staffs': staffs})
+
+def Class_Manager(request):
+    staffs = StaffRegisterForm.objects.all()
+    context = {'staffs': staffs}
+    print(context)
+    return render(request, 'classmanager.html', {'staffs': staffs})

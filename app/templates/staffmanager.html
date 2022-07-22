@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% load static %}{% block css %}
+<link rel="stylesheet" href="{% static 'css/studentmanager.css' %}" />
+{% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
+<h1>This is Staff Manager</h1>
+{% if staffs %} {% for st in staffs %}
+<h3>{{st.gender}}</h3>
+<h3>{{st.first_name}}</h3>
+{% endfor %} {% endif %} {% endblock content %}

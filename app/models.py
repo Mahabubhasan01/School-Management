@@ -3,17 +3,14 @@ from django.db import models
 # Create your models here.
 
 
-
-
-
 # Staff Register Form
 
 class StaffRegisterForm(models.Model):
-    subject_choice = (("Teacher", "Teacher"), ("Professor", "Professor"),
-                      ("Businessman", "Businessman"), ("Sciencist", "Sciencist"), ("Farmer", "Farmer"), ("NGO", "NGO"), ("Banker", "Banker"), ('Others', 'Others'),)
+    subject_choice = (("Bangla", "Bangla"), ("English", "English"),
+                      ("Math", "Math"), ("ICT", "ICT"), ("Physics", "Physics"), ("Chemistry", "Chemistry"), ("Higher Math", "Higher Math"), ('Accounting', 'Accounting'), ('Finance & Banking', 'Finance & Banking'), ('General Science', 'General Science'), ('Bussiness Studies', 'Bussiness Studies'), ('Economics', 'Economics'), ('History', 'History'), ('Ethics', 'Ethics'), ('Others', 'Others'),)
 
-    course_choice = (("Teacher", "Teacher"), ("Professor", "Professor"),
-                     ("Businessman", "Businessman"), ("Sciencist", "Sciencist"), ("Housewife", "Housewife"), ("NGO", "NGO"), ("Banker", "Banker"), ('Others', 'Others'),)
+    course_choice = (("Science", "Science"), ("Commerce", "Commerce"),
+                     ("Arts", "Arts"), ('Others', 'Others'),)
 
     blood_group = (('A+', 'A+'), ('A-', 'A-'), ('B+', 'B+'), ('B-', 'B-'), ('AB+',
                    'AB+'), ('AB-', 'AB-'), ('O+', 'O+'), ('O-', 'O-'), ('Others', 'Others'),)
@@ -26,16 +23,18 @@ class StaffRegisterForm(models.Model):
     father_name = models.CharField(max_length=100)
     mother_name = models.CharField(max_length=100)
     subject_choice = models.CharField(
-        max_length=100, choices=subject_choice, default='Calculas')
+        max_length=100, choices=subject_choice, default='Chemistry')
 
     date_of_birth = models.DateTimeField(max_length=10)
     gender = models.CharField(max_length=20, choices=(
-        ("male", "male"), ("female", "female")))
+        ("male", "male"), ("female", "female")), default='male')
     course = models.CharField(
-        max_length=100, choices=course_choice, default='Engineering')
-    section = models.CharField(max_length=100)
+        max_length=100, choices=course_choice, default='Science')
+    section = models.CharField(max_length=100, choices=(
+        ("Morning", "Morning"), ("Afternoon", "Afternoon"), ("Evening", "Evening")), default='Morning')
     phone_number = models.IntegerField()
-    blood_group = models.CharField(max_length=10, choices=blood_group)
+    blood_group = models.CharField(
+        max_length=10, choices=blood_group, default='A+')
     religion = models.CharField(
         max_length=50, choices=religion_group, default='Islam')
     """ profile_img = models.ImageField(upload_to='assets/images') """

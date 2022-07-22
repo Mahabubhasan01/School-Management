@@ -7,21 +7,22 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Course</th>
-        <th>About</th>
+        <th>Teacher</th>
+        <th>Shift</th>
+        <th>Subject</th>
+        <th>Department</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
-      {% if student %} {% for st in student %}
+      {% if staffs %} {% for st in staffs %}
       <tr>
-        <td data-label="first-name">{{st.first_name}}</td>
-        <td data-label="last-name">{{st.last_name}}</td>
+        <td data-label="first-name">{{st.first_name}} {{st.last_name}}</td>
+        <td data-label="last-name">{{st.section}}</td>
+        <td data-label="email">{{st.subject_choice}}</td>
         <td data-label="email">{{st.course}}</td>
-        <td data-label="email">
-          <button type="button" class="btn btn-info">Details</button>
-        </td>
+        <td data-label="email">{{st.date_of_birth}}</td>
+        
       </tr>
       {% endfor %} {% endif %}
     </tbody>
