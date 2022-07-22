@@ -19,6 +19,10 @@ urlpatterns = [
     path('dashboard/', views.user_dashboard, name='dashboard'),
     path('calendar/', views.CalendarView.as_view(), name='calendar'),
 
+    path('event/new/', views.event, name='event_new'),
+    path('event/edit/(?P<event_id>\d+)/$', views.event, name='event_edit'),
+
+
 ]
 
 """ 

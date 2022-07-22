@@ -1,8 +1,16 @@
-{% extends 'base.html' %} {% load static %}
-{% block css %}
+{% extends 'base.html' %} {% load static %} {% block css %}
 <link rel="stylesheet" href="{% static 'css/calendar.css' %}" />
-{% endblock css %} 
-{% block content %}
-{% include 'navbardashboard.html' %}
- {{ calendar }} 
-{% endblock content%}
+{% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}">
+    Previous Month
+  </a>
+  <a
+    class="btn btn-info right"
+    href="{% url 'calendar' %}?{{ next_month }}"
+  >
+    Next Month
+  </a>
+  <a class="btn btn-info right" href="{% url 'event_new' %}"> New Event </a>
+</div>
+{{ calendar }} {% endblock content%}
