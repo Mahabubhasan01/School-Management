@@ -37,7 +37,11 @@
       >
     </div>
     <div class="content__title">
-      <h1>Samantha Jones</h1>
+      {% if users %}
+        {% for user in users  %}
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        {% endfor %}
+      {% endif %}
       <span>New York, United States</span>
     </div>
     <div class="content__description">
