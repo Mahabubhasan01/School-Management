@@ -11,6 +11,9 @@
     text-decoration: none;
     outline: none;
   }
+  ul li a{
+    text-decoration: none !important;
+  }
   #cards_landscape_wrap-2 .card-flyer {
     border-radius: 5px;
   }
