@@ -87,5 +87,24 @@ class Event(models.Model):
 
     @property
     def get_html_url(self):
-        url = reverse('cal:event_edit', args=(self.id,))
+        url = reverse('event_edit', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class Subject_Manager(models.Model):
+    subject_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+    teacher_name = models.CharField(max_length=100)
+
+
+class Class_Manager(models.Model):
+    class_name = models.CharField(max_length=100)
+    section_name = models.CharField(max_length=100)
+
+class Result_Manager(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+    

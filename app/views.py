@@ -164,32 +164,6 @@ def Class_Manager(request):
     return render(request, 'classmanager.html', {'staffs': staffs})
 
 
-# class CalendarView(generic.ListView):
-#     model = Event
-#     template_name = 'calendar.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-
-#         # use today's date for the calendar
-#         d = get_date(self.request.GET.get('day', None))
-
-#         # Instantiate our calendar class with today's year and date
-#         cal = Calendar(d.year, d.month)
-
-#         # Call the formatmonth method, which returns our calendar as a table
-#         html_cal = cal.formatmonth(withyear=True)
-#         context['calendar'] = mark_safe(html_cal)
-#         return context
-
-
-# def get_date(req_day):
-#     if req_day:
-#         year, month = (int(x) for x in req_day.split('-'))
-#         return date(year, month, day=1)
-#     return datetime.today()
-
-
 class CalendarView(generic.ListView):
     model = Event
     template_name = 'calendar.html'
@@ -239,3 +213,33 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('calendar'))
     return render(request, 'event.html', {'form': form})
+
+
+def SubjectManager(request):
+    return render(request, 'subjectmanager.html')
+
+
+def ClassManager(request):
+    return render(request, 'classmanager.html')
+
+
+def ResultManager(request):
+    return render(request, 'resultmanager.html')
+
+
+def FeeManagement(request):
+    return render(request, 'feemanagement.html')
+
+
+def ViewUSers(request):
+    users = StaffRegisterForm.objects.all()
+    students = StudentRegisterForm.objects.all()
+    return render(request, 'viewusers.html', {'users': users, 'students': students})
+
+
+def StaffPayRoll(request):
+    return render(request, 'staffpayroll.html')
+
+
+def StudentPayment(request):
+    return render(request, 'studentpayment.html')

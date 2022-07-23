@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static %}{% block css %}
-<link rel="stylesheet" href="{% static 'css/studentmanager.css' %}" />
+<link rel="stylesheet" href="{% static 'css/subjectmanager.css' %}" />
 {% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
 
 <div class="container">
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      {% if staffs %} {% for st in staffs %}
+      {% if student %} {% for st in student %}
       <tr>
         <td data-label="first-name">{{st.first_name}}</td>
         <td data-label="last-name">{{st.last_name}}</td>

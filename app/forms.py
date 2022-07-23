@@ -1,4 +1,4 @@
-from .models import Event
+from .models import Class_Manager, Event, Subject_Manager
 from django.forms import ModelForm, DateInput
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UsernameField
 from django.contrib.auth.models import User
@@ -62,3 +62,24 @@ class EventForm(ModelForm):
         # input_formats parses HTML5 datetime-local input to datetime field
         self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
         self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
+
+
+class Subject_Form(ModelForm):
+    class Meta:
+        model = Subject_Manager
+        fields = ['subject_name', 'teacher_name', 'class_name', ]
+        labels = {'subject_name': 'Subject Name',
+                  'class_name': 'Class Name', 'teacher_name': 'Teacher Name', }
+        # widgets = {'username': forms.TextInput(attrs={'class': 'form-control'}), 'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+        #            'last_name': forms.TextInput(attrs={'class': 'form-control'}), 'email': forms.EmailInput(attrs={'class': 'form-control'}), }
+
+
+class Class_Form(ModelForm):
+    class Meta:
+        model = Class_Manager
+        fields = ['class_name', 'section_name', ]
+        labels = {
+            'class_name': 'Class Name', 'section_name': 'Section Name',
+        }
+        # widgets = {'username': forms.TextInput(attrs={'class': 'form-control'}), 'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+        #            'last_name': forms.TextInput(attrs={'class': 'form-control'}), 'email': forms.EmailInput(attrs={'class': 'form-control'}), }

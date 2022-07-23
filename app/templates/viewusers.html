@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="{% static 'css/studentmanager.css' %}" />
 {% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
 
-<div class="container">
-  <h2>Responsive Table</h2>
+<div class="container ">
+  <h2>Teachers</h2>
   <table class="table">
     <thead>
       <tr>
@@ -14,7 +14,32 @@
       </tr>
     </thead>
     <tbody>
-      {% if staffs %} {% for st in staffs %}
+      {% if users %} {% for st in users %}
+      <tr>
+        <td data-label="first-name">{{st.first_name}}</td>
+        <td data-label="last-name">{{st.last_name}}</td>
+        <td data-label="email">{{st.course}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-info">Details</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="container mt-5">
+  <h2>Students</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Course</th>
+        <th>About</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if students %} {% for st in students %}
       <tr>
         <td data-label="first-name">{{st.first_name}}</td>
         <td data-label="last-name">{{st.last_name}}</td>

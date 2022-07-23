@@ -21,12 +21,12 @@ urlpatterns = [
 
     path('event/new/', views.event, name='event_new'),
     path('event/edit/(?P<event_id>\d+)/$', views.event, name='event_edit'),
-
+    path('subject_manager/', views.SubjectManager, name='subject_manager'),
+    path('class_manager/', views.ClassManager, name='class_manager'),
+    path('result_manager/', views.ResultManager, name='result_manager'),
+    path('fee_management/', views.FeeManagement, name='fee_management'),
+    path('view_users/', views.ViewUSers, name='view_users'),
+    path('staff_pay_roll/', views.StaffPayRoll, name='staff_pay_roll'),
+    path('student_payment/', views.StudentPayment, name='student_payment'),
 
 ]
-
-""" 
-urlpatterns = [
-    url(r'^index/$', views.index, name='index'),
-    url(r'^calendar/$', views.CalendarView.as_view(), name='calendar'),  # here
-] """
