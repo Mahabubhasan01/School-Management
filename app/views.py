@@ -243,3 +243,51 @@ def StaffPayRoll(request):
 
 def StudentPayment(request):
     return render(request, 'studentpayment.html')
+
+
+def Class_Six(request):
+    return render(request, 'classsix.html')
+
+
+def Class_Seven(request):
+    return render(request, 'classseven.html')
+
+
+def Class_Eight(request):
+    return render(request, 'classeight.html')
+
+
+def Class_Nine(request):
+    return render(request, 'classnine.html')
+
+
+def Class_Ten(request):
+    return render(request, 'classten.html')
+
+
+def Ssc_Candidate(request):
+    return render(request, 'ssccandidate.html')
+
+
+def Class_Six_Result(request):
+    return render(request, 'classsix.html')
+
+
+def Class_Seven_Result(request):
+    return render(request, 'classseven.html')
+
+
+def Class_Eight_Result(request):
+    return render(request, 'classeight.html')
+
+
+def Class_Nine_Result(request):
+    return render(request, 'classnine.html')
+
+
+def Class_Ten_Result(request):
+    return render(request, 'classten.html')
+
+
+def Ssc_Candidate_Result(request):
+    return render(request, 'ssccandidate.html')

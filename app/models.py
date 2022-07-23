@@ -104,7 +104,37 @@ class Class_Manager(models.Model):
     class_name = models.CharField(max_length=100)
     section_name = models.CharField(max_length=100)
 
-class Result_Manager(models.Model):
+
+class Result_Model_Manager(models.Model):
     section_name = models.CharField(max_length=100)
     class_name = models.CharField(max_length=100)
-    
+
+
+class Class_Six_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+
+
+class Class_Seven_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+
+
+class Class_Eight_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+
+
+class Class_Nine_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+
+
+class Class_Ten_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)
+
+
+class Class_Ssc_Result_Model(models.Model):
+    section_name = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=100)

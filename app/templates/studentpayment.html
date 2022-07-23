@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %} {% load static %}{% block css %}
 <link
   href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
@@ -6,12 +5,10 @@
   id="bootstrap-css"
 />
 <link rel="stylesheet" href="{% static 'css/studentpayment.css' %}" />
-{% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
-
-
-
-
-{% comment %} <!------ Include the above in your HEAD tag ----------> {% endcomment %}
+{% endblock css %} {% block content %} {% include 'navbardashboard.html' %} {%
+comment %}
+<!------ Include the above in your HEAD tag ---------->
+{% endcomment %}
 
 <div class="container wrapper">
   <div class="row cart-head">
@@ -41,6 +38,7 @@
   </div>
   <div class="row cart-body">
     <form class="form-horizontal" method="post" action="">
+      {% csrf_token %}
       <div
         class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6"
       >
@@ -327,9 +325,11 @@
             </div>
             <div class="form-group">
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <button type="submit" class="btn btn-primary btn-submit-fix">
-                  Place Order
-                </button>
+                <a href="{% url 'staff_pay_roll' %}"
+                  ><button type="submit" class="btn btn-primary btn-submit-fix">
+                    Pay Order
+                  </button></a
+                >
               </div>
             </div>
           </div>
