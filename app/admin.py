@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import StudentRegisterForm, StaffRegisterForm, Event, Class_Manager, Subject_Manager
+from .models import Class_Manager_Model, StudentRegisterForm, StaffRegisterForm, Event, Subject_Manager
 # Register your models here.
 
 
@@ -8,7 +8,7 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'description', 'start_time', 'end_time', ]
 
 
-@admin.register(Class_Manager)
+@admin.register(Class_Manager_Model)
 class ClassAdmin(admin.ModelAdmin):
     list_display = ['id', 'class_name', 'section_name', ]
 

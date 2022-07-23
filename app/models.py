@@ -100,7 +100,7 @@ class Subject_Manager(models.Model):
     teacher_name = models.CharField(max_length=100)
 
 
-class Class_Manager(models.Model):
+class Class_Manager_Model(models.Model):
     class_name = models.CharField(max_length=100)
     section_name = models.CharField(max_length=100)
 

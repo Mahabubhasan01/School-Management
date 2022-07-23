@@ -130,7 +130,8 @@ def user_student(request):
 
 
 def user_profile(request):
-    users = User.objects.all()
+    users =StudentRegisterForm.objects.get(id=1)
+    """ users =StudentRegisterForm.objects.filter(first_name=request.user,last_name=request.user) """
     return render(request, 'profile.html', {'users': users})
 
 

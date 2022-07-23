@@ -1,4 +1,4 @@
-from .models import Class_Manager, Event, Subject_Manager
+from .models import Class_Manager_Model, Event, Subject_Manager
 from django.forms import ModelForm, DateInput
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UsernameField
 from django.contrib.auth.models import User
@@ -76,7 +76,7 @@ class Subject_Form(ModelForm):
 
 class Class_Form(ModelForm):
     class Meta:
-        model = Class_Manager
+        model = Class_Manager_Model
         fields = ['class_name', 'section_name', ]
         labels = {
             'class_name': 'Class Name', 'section_name': 'Section Name',

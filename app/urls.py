@@ -29,20 +29,24 @@ urlpatterns = [
     path('staff_pay_roll/', views.StaffPayRoll, name='staff_pay_roll'),
     path('student_payment/', views.StudentPayment, name='student_payment'),
 
-    path('Class_Six/', views.Class_Six, name='class_six'),
-    path('Class_Seven/', views.Class_Seven, name='class_seven'),
-    path('Class_Eight/', views.Class_Eight, name='class_eight'),
-    path('Class_Nine/', views.Class_Nine, name='class_nine'),
-    path('Class_Ten/', views.Class_Ten, name='class_ten'),
-    path('Ssc_Candidate/', views.Ssc_Candidate, name='ssc_candidate'),
+    path('student_manager/Class_Six/', views.Class_Six, name='class_six'),
+    path('student_manager/Class_Seven/', views.Class_Seven, name='class_seven'),
+    path('student_manager/Class_Eight/', views.Class_Eight, name='class_eight'),
+    path('student_manager/Class_Nine/', views.Class_Nine, name='class_nine'),
+    path('student_manager/Class_Ten/', views.Class_Ten, name='class_ten'),
+    path('student_manager/Ssc_Candidate/',
+         views.Ssc_Candidate, name='ssc_candidate'),
 
 
     path('Class_Six_Result/', views.Class_Six_Result, name='class_six_result'),
-    path('Class_Seven_Result/', views.Class_Seven_Result, name='class_seven_result'),
-    path('Class_Eight_Result/', views.Class_Eight_Result, name='class_eight_result'),
+    path('Class_Seven_Result/', views.Class_Seven_Result,
+         name='class_seven_result'),
+    path('Class_Eight_Result/', views.Class_Eight_Result,
+         name='class_eight_result'),
     path('Class_Nine_Result/', views.Class_Nine_Result, name='class_nine_result'),
     path('Class_Ten_Result/', views.Class_Ten_Result, name='class_ten_result'),
-    path('Ssc_Candidate_Result/', views.Ssc_Candidate_Result, name='ssc_candidate_result'),
+    path('Ssc_Candidate_Result/', views.Ssc_Candidate_Result,
+         name='ssc_candidate_result'),
 
 
 ]
