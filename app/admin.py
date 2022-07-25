@@ -20,8 +20,8 @@ class SubjectAdmin(admin.ModelAdmin):
 
 @admin.register(StudentRegisterForm)
 class StudentRegisterFormAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'father_name', 'mother_name', 'father_occupation',
-                    'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion']
+    list_display = ['id', 'student_name', 'admission_roll',  'email_address', 'student_class',  'father_name', 'mother_name', 'father_occupation',
+                    'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_img', ]
 
 
 @admin.register(StaffRegisterForm)

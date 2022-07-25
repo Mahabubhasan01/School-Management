@@ -130,7 +130,7 @@ def user_student(request):
 
 
 def user_profile(request):
-    users =StudentRegisterForm.objects.get(id=1)
+    users = StudentRegisterForm.objects.get(id=1)
     """ users =StudentRegisterForm.objects.filter(first_name=request.user,last_name=request.user) """
     return render(request, 'profile.html', {'users': users})
 
@@ -247,27 +247,34 @@ def StudentPayment(request):
 
 
 def Class_Six(request):
-    return render(request, 'classsix.html')
+    users = StudentRegisterForm.objects.filter(student_class='Six')
+    print(users)
+    return render(request, 'classsix.html', {'users': users})
 
 
 def Class_Seven(request):
+    users = StudentRegisterForm.objects.filter(student_class='Seven')
     return render(request, 'classseven.html')
 
 
 def Class_Eight(request):
-    return render(request, 'classeight.html')
+    users = StudentRegisterForm.objects.filter(student_class='Eight')
+    return render(request, 'classeight.html', {'users': users},)
 
 
 def Class_Nine(request):
-    return render(request, 'classnine.html')
+    users = StudentRegisterForm.objects.filter(student_class='Nine')
+    return render(request, 'classnine.html', {'users': users})
 
 
 def Class_Ten(request):
-    return render(request, 'classten.html')
+    users = StudentRegisterForm.objects.filter(student_class='Ten')
+    return render(request, 'classten.html', {'users': users})
 
 
 def Ssc_Candidate(request):
-    return render(request, 'ssccandidate.html')
+    users = StudentRegisterForm.objects.filter(student_class='Nine')
+    return render(request, 'ssccandidate.html', {'users': users})
 
 
 def Class_Six_Result(request):
@@ -292,3 +299,7 @@ def Class_Ten_Result(request):
 
 def Ssc_Candidate_Result(request):
     return render(request, 'ssccandidate.html')
+
+
+def Update_User(request):
+    return render(request, 'updateuser.html')

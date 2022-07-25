@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %}{% block css %}
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="{% static 'css/studentmanager.css' %}" />
+<link rel="stylesheet" href="{% static 'css/classsix.css' %}" />
+{% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
+
+<div class="container">
+  <h2>Responsive Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Course</th>
+        <th>About</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if student %} {% for st in student %}
+      <tr>
+        <td data-label="first-name">{{st.first_name}}</td>
+        <td data-label="last-name">{{st.last_name}}</td>
+        <td data-label="email">{{st.course}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-info">Details</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+
+<div class="container profile-page">
+  <div class="row">
+    {% if users %} {% for user in users %}
+    <div class="col-12">
+      <div class="card profile-header">
+        <div class="body">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="profile-image float-md-center">
+                <img
+                  src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-12">
+              <h4 class="m-t-0 m-b-0">
+                <strong>{{user.student_name}}</strong>
+              </h4>
+              <span class="job_post">Ui UX Designer</span>
+              <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
+              <div>
+                <button class="btn btn-primary btn-round">Result</button>
+                <button class="btn btn-primary btn-round btn-simple">
+                  Fees
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% endif %}
+  </div>
+</div>
+{% endblock content %}

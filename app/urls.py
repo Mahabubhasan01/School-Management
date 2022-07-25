@@ -48,5 +48,7 @@ urlpatterns = [
     path('Ssc_Candidate_Result/', views.Ssc_Candidate_Result,
          name='ssc_candidate_result'),
 
+    path('update_user',views.Update_User,name='Update_User')     
+
 
 ]

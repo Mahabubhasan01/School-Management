@@ -10,19 +10,20 @@ class StudentForm(forms.ModelForm):
 
     class Meta:
         model = StudentRegisterForm
-        fields = ['first_name', 'last_name', 'father_name', 'mother_name', 'father_occupation', 'father_occupation',
-                  'date_of_birth', 'gender', 'course', 'section', 'phone_number', 'blood_group', 'religion']
+        fields = ['student_name', 'admission_roll',  'email_address', 'student_class',  'father_name', 'mother_name', 'father_occupation',
+                  'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_img', ]
 
-        labels = {'first_name': 'First Name', 'last_name': 'Last Name', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
-                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'course': 'Course', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion'}
-        widgets = {'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'last_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'father_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'mother_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), }
+        labels = {'student_name': 'Student Name', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
+                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion', 'address': 'Address', 'profile_img': 'Image'}
+
+        """  widgets = {'first_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'last_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'father_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'mother_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+                attrs={'class': 'form-control'}), } """
 
 
 class user_student(UserCreationForm):
