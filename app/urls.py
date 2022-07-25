@@ -20,7 +20,7 @@ urlpatterns = [
     path('calendar/', views.CalendarView.as_view(), name='calendar'),
 
     path('event/new/', views.event, name='event_new'),
-    path('event/edit/(?P<event_id>\d+)/$', views.event, name='event_edit'),
+    path('event/edit/', views.event, name='event_edit'),
     path('subject_manager/', views.SubjectManager, name='subject_manager'),
     path('class_manager/', views.ClassManager, name='class_manager'),
     path('result_manager/', views.ResultManager, name='result_manager'),

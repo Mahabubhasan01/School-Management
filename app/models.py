@@ -37,7 +37,7 @@ class StaffRegisterForm(models.Model):
         max_length=10, choices=blood_group, default='A+')
     religion = models.CharField(
         max_length=50, choices=religion_group, default='Islam')
-    """ profile_img = models.ImageField(upload_to='assets/images') """
+    profile_img = models.ImageField(upload_to='assets', null=True,)
 
     def __str__(self):
         return self.first_name+' '+self.last_name
@@ -60,12 +60,13 @@ class StudentRegisterForm(models.Model):
 
     student_name = models.CharField(max_length=100)
     admission_roll = models.IntegerField(default=101)
-    email_address = models.EmailField(max_length=200,default='Mahabubhasaan@outlook.com')
+    email_address = models.EmailField(
+        max_length=200, default='Mahabubhasaan@outlook.com')
     student_class = models.CharField(max_length=100, choices=(
         ('Six', 'Six'), ('Seven', 'Seven'), ('Eight', 'Eight'), ('Nine', 'Nine'), ('Ten', 'Ten'),),)
     section = models.CharField(max_length=100, choices=(('Rose', 'Rose'), ('Lotus', 'Lotus'), (
-            'Jasmine', 'Jasmine'), ('Orchid', 'Orchid'), ('Tulip', 'Tulip'),('Science', 'Science'), ('Commerce', 'Commerce'), (
-            'Jasmine', 'Arts'),), default='Jasmine')          
+        'Jasmine', 'Jasmine'), ('Orchid', 'Orchid'), ('Tulip', 'Tulip'), ('Science', 'Science'), ('Commerce', 'Commerce'), (
+        'Jasmine', 'Arts'),), default='Jasmine')
     father_name = models.CharField(max_length=100)
     mother_name = models.CharField(max_length=100)
     father_occupation = models.CharField(
@@ -85,7 +86,7 @@ class StudentRegisterForm(models.Model):
         max_length=50, choices=religion_group, default='Islam')
     address = models.TextField(
         max_length=500, default='House No. 290, Mirpur Section - 12 Dhaka - 1000 ,Bangladesh')
-    profile_img = models.ImageField(upload_to='assets')
+    profile_image = models.ImageField(upload_to='assets', null=True,)
 
     def __str__(self):
         return self.student_name
@@ -150,3 +151,27 @@ class Class_Ten_Result_Model(models.Model):
 class Class_Ssc_Result_Model(models.Model):
     section_name = models.CharField(max_length=100)
     class_name = models.CharField(max_length=100)
+
+
+class Student_Exam(models.Model):
+    terms_name = models.CharField(max_length=100, choices=(
+        ('First-Terms', 'First-Terms'), ('Second-Terms', 'Second-Terms'), ('Final-Terms', 'Final-Terms'),),)
+    class_name = models.CharField(max_length=100, choices=(
+        ('Six', 'Six'), ('Seven', 'Seven'), ('Eight', 'Eight'), ('Nine', 'Nine'), ('Ten', 'Ten'),),)
+    section_name = models.CharField(max_length=100, choices=(('Rose', 'Rose'), ('Lotus', 'Lotus'), (
+        'Jasmine', 'Jasmine'), ('Orchid', 'Orchid'), ('Tulip', 'Tulip'), ('Science', 'Science'), ('Commerce', 'Commerce'), (
+        'Jasmine', 'Arts'),), default='Jasmine')
+    start_date = models.DateTimeField(max_length=100)
+    end_date = models.DateTimeField(max_length=100)
+
+
+class Student_Result(models.Model):
+    terms_name = models.CharField(max_length=100, choices=(
+        ('First-Terms', 'First-Terms'), ('Second-Terms', 'Second-Terms'), ('Final-Terms', 'Final-Terms'),),)
+    class_name = models.CharField(max_length=100, choices=(
+        ('Six', 'Six'), ('Seven', 'Seven'), ('Eight', 'Eight'), ('Nine', 'Nine'), ('Ten', 'Ten'),),)
+    section_name = models.CharField(max_length=100, choices=(('Rose', 'Rose'), ('Lotus', 'Lotus'), (
+        'Jasmine', 'Jasmine'), ('Orchid', 'Orchid'), ('Tulip', 'Tulip'), ('Science', 'Science'), ('Commerce', 'Commerce'), (
+        'Jasmine', 'Arts'),), default='Jasmine')
+    published_date = models.DateTimeField(max_length=100)
+    attached_file = models.FileField(upload_to='assets')

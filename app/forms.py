@@ -11,19 +11,19 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = StudentRegisterForm
         fields = ['student_name', 'admission_roll',  'email_address', 'student_class',  'father_name', 'mother_name', 'father_occupation',
-                  'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_img', ]
+                  'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_image', ]
 
         labels = {'student_name': 'Student Name', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
-                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion', 'address': 'Address', 'profile_img': 'Image'}
+                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion', 'address': 'Address', 'profile_image': 'Image'}
 
-        """  widgets = {'first_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'last_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'father_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'mother_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-                attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-                attrs={'class': 'form-control'}), } """
+        widgets = {'first_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'last_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'father_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'mother_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
+            attrs={'class': 'form-control'}), }
 
 
 class user_student(UserCreationForm):

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Class_Manager_Model, StudentRegisterForm, StaffRegisterForm, Event, Subject_Manager
+from .models import *
 # Register your models here.
 
 
@@ -21,10 +21,22 @@ class SubjectAdmin(admin.ModelAdmin):
 @admin.register(StudentRegisterForm)
 class StudentRegisterFormAdmin(admin.ModelAdmin):
     list_display = ['id', 'student_name', 'admission_roll',  'email_address', 'student_class',  'father_name', 'mother_name', 'father_occupation',
-                    'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_img', ]
+                    'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_image', ]
 
 
 @admin.register(StaffRegisterForm)
 class StaffRegisterFormAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'last_name', 'father_name', 'mother_name', 'subject_choice',
-                    'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion']
+                    'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'profile_img']
+
+
+@admin.register(Student_Exam)
+class StudentExamAdmin(admin.ModelAdmin):
+    list_display = ['id', 'terms_name', 'class_name',
+                    'section_name', 'start_date', 'end_date', ]
+
+
+@admin.register(Student_Result)
+class StudentResultAdmin(admin.ModelAdmin):
+    list_display = ['id', 'terms_name', 'class_name',
+                    'section_name', 'published_date', 'attached_file']

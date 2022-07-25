@@ -146,9 +146,14 @@ def Navbar_Dashboard(request):
 
 def Student_Manager(request):
     student = StudentRegisterForm.objects.all()
-    context = {'student': student}
-    print(context)
-    return render(request, 'studentmanager.html', {'student': student})
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = StudentForm()
+    return render(request, 'studentmanager.html', {'student': student, 'form': form})
 
 
 def Staff_Manager(request):
@@ -248,8 +253,8 @@ def StudentPayment(request):
 
 def Class_Six(request):
     users = StudentRegisterForm.objects.filter(student_class='Six')
-    print(users)
-    return render(request, 'classsix.html', {'users': users})
+
+    return render(request, 'classsix.html', {'users': users, })
 
 
 def Class_Seven(request):
