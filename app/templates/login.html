@@ -41,46 +41,17 @@
             <div class="card">
               <div class="card-body wow-bg" id="formBg">
                 <h3 class="colorboard">Login</h3>
-
                 <p class="text-muted">Sign In to your account</p>
-
-               {% comment %}  <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control textbox-dg"
-                    placeholder="Username"
-                  />
-                </div>
-                <div class="input-group mb-4">
-                  <input
-                    type="password"
-                    class="form-control textbox-dg"
-                    placeholder="Password"
-                  />
-                </div> {% endcomment %}
-
-
-
-
-
-
                 <form action="" method="POST" class="">
                   {% csrf_token %} {% for fm in form %}
                   <div class="input-group mb-4">
-                    <span
-                      class="form-control textbox-dg"
-                      >{{fm}}</span
-                    ><span class='text-red-700'>{{fm.erros|striptags}}</span>
+                    {{fm}}
+                    <span class='text-red-700'>{{fm.erros|striptags}}</span>
                   </div>
                   {% endfor %}
                   <div class="row">
                     <div class="col-12">
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-block logn-btn"
-                      >
-                        <input class='' type="submit" value="Submit">
-                      </button>
+                      <input class='btn btn-primary btn-block logn-btn' type="submit" value="Submit">
                     </div>
                 </form>
                   <div class="col-12">

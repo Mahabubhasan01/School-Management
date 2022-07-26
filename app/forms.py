@@ -13,17 +13,40 @@ class StudentForm(forms.ModelForm):
         fields = ['student_name', 'admission_roll',  'email_address', 'student_class',  'father_name', 'mother_name', 'father_occupation',
                   'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_image', ]
 
-        labels = {'student_name': 'Student Name', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
+        labels = {'student_name': 'Student Name', 'email_address': 'Email Address', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
                   'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion', 'address': 'Address', 'profile_image': 'Image'}
 
-        widgets = {'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'last_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'father_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'mother_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), 'first_name': forms.TextInput(
-            attrs={'class': 'form-control'}), }
+        widgets = {
+            'student_name': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'type your name'}),
+            'date_of_birth': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'type your name'}),
+            'email_address': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'Enter your email'},),
+            'admission_roll': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'type your admission roll'}),
+            'student_class': forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': 'type your admission roll'}),
+            'father_name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'father_occupation': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'mother_name': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'mother_occupation': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'blood_group': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'course': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'section': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'religion': forms.TextInput(
+                attrs={'class': 'form-control'}),
+            'address': forms.Textarea({'class': 'form-control'}),
+        }
 
 
 class user_student(UserCreationForm):
@@ -43,9 +66,9 @@ class user_student(UserCreationForm):
 
 class Login_Form(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(
-        attrs={'class': 'form-control'}))
+        attrs={'class': 'form-control textbox-dg'}))
     password = forms.CharField(label='Password', strip=False, widget=forms.PasswordInput(
-        attrs={'class': 'form-control', 'autocomplete': 'current-password'}))
+        attrs={'class': 'form-control textbox-dg', 'autocomplete': 'current-password'}))
 
 
 class EventForm(ModelForm):

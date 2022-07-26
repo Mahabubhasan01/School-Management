@@ -45,6 +45,8 @@ def Student_Form(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
+            form = StudentForm()
+            print(form)
             return HttpResponseRedirect('/user-student/')
     else:
         form = StudentForm()

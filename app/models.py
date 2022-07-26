@@ -114,14 +114,15 @@ class Subject_Manager(models.Model):
 
 
 class Class_Manager_Model(models.Model):
-    teacher_name = models.CharField(max_length=50,default='Aolad Hossian Sorkar')
+    teacher_name = models.CharField(
+        max_length=50, default='Aolad Hossian Sorkar')
     subject_name = models.CharField(max_length=100, choices=(('Bangla', 'Bangla'), ('English', 'English'), (
         'Math', 'Math'), ('Ict', 'Ict'), ('Physics', 'Physics'), ('Chemistry', 'Chemistry'), ('Biology', 'Biology'), (
         'Higher Math', 'Higher Math'), ('Accounting', 'Accounting'), ('Finance Banking', 'Finance Banking'), ('Business Studies', 'Business Studies'), ('Ethics', 'Ethics'), ('History', 'History'), ('Physical Education', 'Physical Education'), ('Agriculture Studies', 'Agriculture Studies'), ('Computer Studies', 'Computer Studies'),), default='Physics')
     class_name = models.CharField(max_length=100, choices=(
         ('Six', 'Six'), ('Seven', 'Seven'), ('Eight', 'Eight'), ('Nine', 'Nine'), ('Ten', 'Ten'),),)
     class_serial = models.CharField(max_length=100, choices=(
-        ('1st', '1st'), ('2nd', '2nd'), ('3rd', '3rd'), ('4th', '4th'), ('5th', '5th'), ('6th', '6th'), ('7th', '7th'), ('8th', '8th'), ('9th', '9th'), ('10th', '10th'),),default='1st')
+        ('1st', '1st'), ('2nd', '2nd'), ('3rd', '3rd'), ('4th', '4th'), ('5th', '5th'), ('6th', '6th'), ('7th', '7th'), ('8th', '8th'), ('9th', '9th'), ('10th', '10th'),), default='1st')
     section_name = models.CharField(max_length=100, choices=(('Rose', 'Rose'), ('Lotus', 'Lotus'), (
         'Jasmine', 'Jasmine'), ('Orchid', 'Orchid'), ('Tulip', 'Tulip'), ('Science', 'Science'), ('Commerce', 'Commerce'), (
         'Arts', 'Arts'),), default='Jasmine')
