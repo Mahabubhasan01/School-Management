@@ -37,7 +37,16 @@ def Head_Form(request):
 
 
 def Staff_Form(request):
-    return render(request, 'staffform.html', {'Staff-form': 'Staff-form'})
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = StudentForm()
+            print(form)
+            return HttpResponseRedirect('/user-student/')
+    else:
+        form = StudentForm()
+    return render(request, 'staffform.html', {'Staff-form': 'Staff-form','form':form})
 
 
 def Student_Form(request):
