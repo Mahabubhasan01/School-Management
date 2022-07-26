@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from .forms import StudentForm, user_student as user
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from app.models import StudentRegisterForm, StaffRegisterForm
+from app.models import StudentRegisterForm, StaffRegisterForm, Class_Manager_Model
 from .forms import Login_Form
 from django.contrib.auth.models import User
 # Create your views here.
@@ -140,6 +140,7 @@ def user_dashboard(request):
 
 
 def Navbar_Dashboard(request):
+
     users = User.objects.all()
     return render(request, 'navbardashboard.html', {'users': users})
 
@@ -164,10 +165,13 @@ def Staff_Manager(request):
 
 
 def Class_Manager(request):
-    staffs = StaffRegisterForm.objects.all()
-    context = {'staffs': staffs}
-    print(context)
-    return render(request, 'classmanager.html', {'staffs': staffs})
+    six = Class_Manager_Model.objects.filter(class_name='Six')
+    seven = Class_Manager_Model.objects.filter(class_name='Seven')
+    eight = Class_Manager_Model.objects.filter(class_name='Eight')
+    nine = Class_Manager_Model.objects.filter(class_name='Nine')
+    ten = Class_Manager_Model.objects.filter(class_name='Ten')
+    return render(request, 'classmanager.html',  {'six': six, 'seven': seven,
+                                                 'eight': eight, 'nine': nine, 'ten': ten, })
 
 
 class CalendarView(generic.ListView):
@@ -222,11 +226,14 @@ def event(request, event_id=None):
 
 
 def SubjectManager(request):
-    return render(request, 'subjectmanager.html')
+    subjects = Subject_Manager.objects.all()
+    return render(request, 'subjectmanager.html', {'subjects': subjects})
 
 
 def ClassManager(request):
-    return render(request, 'classmanager.html')
+
+
+    return render(request, 'classmanager.html',)
 
 
 def ResultManager(request):
@@ -259,7 +266,7 @@ def Class_Six(request):
 
 def Class_Seven(request):
     users = StudentRegisterForm.objects.filter(student_class='Seven')
-    return render(request, 'classseven.html')
+    return render(request, 'classseven.html', {'users': users, })
 
 
 def Class_Eight(request):

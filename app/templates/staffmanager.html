@@ -1,5 +1,11 @@
 {% extends 'base.html' %} {% load static %}{% block css %}
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
 <link rel="stylesheet" href="{% static 'css/studentmanager.css' %}" />
+<link rel="stylesheet" href="{% static 'css/classsix.css' %}" />
 {% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
 
 <div class="container">
@@ -15,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      {% if staffs %} {% for st in staffs %}
+      {% comment %} {% if staffs %} {% for st in staffs %}
       <tr>
         <td data-label="first-name">{{st.first_name}}</td>
         <td data-label="last-name">{{st.last_name}}</td>
@@ -27,9 +33,44 @@
           <a href="{% url 'student_payment' %}"><button type="button" class="btn btn-info">Bill Pay</button></a>
         </td>
       </tr>
-      {% endfor %} {% endif %}
+      {% endfor %} {% endif %} {% endcomment %}
     </tbody>
   </table>
+</div><div class="container profile-page">
+
+  <div class="row">
+    {% if staffs %} {% for user in staffs %}
+    <div class="col-12">
+      <div class="card profile-header">
+        <div class="body">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="profile-image float-md-center">
+                <img
+                  src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-12">
+              <h4 class="m-t-0 m-b-0">
+                <strong>{{user.first_name}} {{user.last_name}}</strong>
+              </h4>
+              <span class="job_post">Ui UX Designer</span>
+              <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
+              <div>
+                <button class="btn btn-primary btn-round">Details</button>
+               
+                  <a href="{% url 'student_payment' %}"><button type="button" class="btn btn-primary btn-round btn-simple">Bill Pay</button></a>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% endif %}
+  </div>
 </div>
 
 {% endblock content %}

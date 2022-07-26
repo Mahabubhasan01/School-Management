@@ -2,27 +2,146 @@
 <link rel="stylesheet" href="{% static 'css/classmanager.css' %}" />
 {% endblock css %} {% block content %} {% include 'navbardashboard.html' %}
 
-<div class="container">
-  <h2>Responsive Table</h2>
+<div class="container my-5 ">
+  <h2>Class Six</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Serial</th>
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Section</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if six %} {% for st in six %}
+      <tr>
+        <td data-label="email">{{st.class_serial}}</td>
+        <td data-label="first-name">{{st.teacher_name}}</td>
+        <td data-label="last-name">{{st.subject_name}}</td>
+        <td data-label="email">{{st.class_name}}</td>
+        <td data-label="email">{{st.section_name}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="container my-5 ">
+  <h2>Class Seven</h2>
   <table class="table">
     <thead>
       <tr>
         <th>Teacher</th>
-        <th>Shift</th>
         <th>Subject</th>
-        <th>Department</th>
-        <th>Date</th>
+        <th>Class</th>
+        <th>Serial</th>
+        <th>Section</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      {% if staffs %} {% for st in staffs %}
+      {% if seven %} {% for st in seven %}
       <tr>
-        <td data-label="first-name">{{st.first_name}} {{st.last_name}}</td>
-        <td data-label="last-name">{{st.section}}</td>
-        <td data-label="email">{{st.subject_choice}}</td>
-        <td data-label="email">{{st.course}}</td>
-        <td data-label="email">{{st.date_of_birth}}</td>
-        
+        <td data-label="email">{{st.class_serial}}</td>
+        <td data-label="first-name">{{st.teacher_name}}</td>
+        <td data-label="last-name">{{st.subject_name}}</td>
+        <td data-label="email">{{st.class_name}}</td>
+        <td data-label="email">{{st.section_name}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="container my-5 ">
+  <h2>Class Eight</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Serial</th>
+        <th>Section</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if eight %} {% for st in eight %}
+      <tr>
+        <td data-label="email">{{st.class_serial}}</td>
+        <td data-label="first-name">{{st.teacher_name}}</td>
+        <td data-label="last-name">{{st.subject_name}}</td>
+        <td data-label="email">{{st.class_name}}</td>
+        <td data-label="email">{{st.section_name}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="container my-5 ">
+  <h2>Class Nine</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Serial</th>
+        <th>Section</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if nine %} {% for st in nine %}
+      <tr>
+        <td data-label="email">{{st.class_serial}}</td>
+        <td data-label="first-name">{{st.teacher_name}}</td>
+        <td data-label="last-name">{{st.subject_name}}</td>
+        <td data-label="email">{{st.class_name}}</td>
+        <td data-label="email">{{st.section_name}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="container my-5">
+  <h2>Class Ten</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Serial</th>
+        <th>Section</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if ten %} {% for st in ten %}
+      <tr>
+        <td data-label="email">{{st.class_serial}}</td>
+        <td data-label="first-name">{{st.teacher_name}}</td>
+        <td data-label="last-name">{{st.subject_name}}</td>
+        <td data-label="email">{{st.class_name}}</td>
+        <td data-label="email">{{st.section_name}}</td>
+        <td data-label="email">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
       </tr>
       {% endfor %} {% endif %}
     </tbody>

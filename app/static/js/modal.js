@@ -1,5 +1,2 @@
-$(document).on("click","#cust_btn",function(){
-  
-    $("#myModal").modal("toggle");
-    
-  })
+var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+myModal.show();

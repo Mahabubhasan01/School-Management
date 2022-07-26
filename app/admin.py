@@ -10,7 +10,8 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(Class_Manager_Model)
 class ClassAdmin(admin.ModelAdmin):
-    list_display = ['id', 'class_name', 'section_name', ]
+    list_display = ['id', 'teacher_name', 'subject_name',
+                    'class_serial', 'class_name', 'section_name', ]
 
 
 @admin.register(Subject_Manager)
@@ -27,7 +28,7 @@ class StudentRegisterFormAdmin(admin.ModelAdmin):
 @admin.register(StaffRegisterForm)
 class StaffRegisterFormAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'last_name', 'father_name', 'mother_name', 'subject_choice',
-                    'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'profile_img']
+                    'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', ]
 
 
 @admin.register(Student_Exam)
