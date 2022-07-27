@@ -14,7 +14,7 @@ class StudentForm(forms.ModelForm):
                   'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_image', ]
 
         labels = {'student_name': 'Student Name', 'email_address': 'Email Address', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
-                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion', 'address': 'Address', 'profile_image': 'Image'}
+                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion',  'profile_image': 'Image','address': 'Address',}
 
         widgets = {
             'student_name': forms.TextInput(

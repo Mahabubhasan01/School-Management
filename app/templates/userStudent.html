@@ -1,14 +1,54 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %}{% load static %} {% block content %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/userstudent.css' %}" />
+{% endblock css %}
 
-<form action="" method="POST" novalidate  id='userstudentform' autocomplete=off>
-  {% csrf_token %}
-  {% for fm in form %}
-      <div class="form-group">
-        <span class=''>{{fm.label_tag}}</span> {{fm}}
-        <small class="text-warning">{{fm.errors|striptags}}</small>
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <form class="requires-validation" novalidate>
+            {% csrf_token %} {% for fm in form %} {{fm.label_tag}}
+            <div class="col-md-12">
+              {{fm}}
+              <div class="valid-feedback">Username field is valid!</div>
+              <div class="invalid-feedback">
+                Username field cannot be blank!
+              </div>
+            </div>
+            {% endfor %}
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="invalidCheck"
+                required
+              />
+              <label class="form-check-label"
+                >I confirm that all data are correct</label
+              >
+              <div class="invalid-feedback">
+                Please confirm that the entered data are all correct!
+              </div>
+            </div>
+
+            <div class="form-button mt-3 text-center">
+              <input
+                id="submit"
+                type="submit"
+                class="btn btn-primary"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
       </div>
-  {% endfor %}
-  <input class='btn btn-primary' type="submit" value="Submit">
-</form>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/userstudent.js'%}"></script>
 {% endblock content %}
