@@ -7,7 +7,7 @@
     <div class="form-holder">
       <div class="form-content">
         <div class="form-items">
-          <form class="requires-validation" novalidate>
+          <form class="requires-validation" >
             {% csrf_token %} {% for fm in form %} {{fm.label_tag}}
             <div class="col-md-12">
               {{fm}}
@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <div class="form-button mt-3 text-center">
+            <div class="form-button mt-3 text-center text-info">
               <input
                 id="submit"
                 type="submit"

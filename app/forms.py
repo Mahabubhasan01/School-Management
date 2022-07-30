@@ -14,7 +14,7 @@ class StudentForm(forms.ModelForm):
                   'mother_occupation', 'date_of_birth', 'gender', 'blood_group', 'phone_number', 'course', 'section', 'religion', 'address',  'profile_image', ]
 
         labels = {'student_name': 'Student Name', 'email_address': 'Email Address', 'admission_roll': 'Admission Roll', 'student_class': 'Student Class', 'father_name': 'Father Name', 'mother_name': 'Mother Name', 'father_occupation': 'Father Occupation', 'mother_occupation': 'Mother Occupation',
-                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion',  'profile_image': 'Image','address': 'Address',}
+                  'date_of_birth': 'Date of birth', 'gender': 'Gender', 'resistraion_roll': 'Resistraion Roll', 'section': 'Section', 'phone_number': 'Phone Number', 'blood_group': 'Blood Group', 'religion': 'Religion',  'profile_image': 'Image', 'address': 'Address', }
 
         widgets = {
             'student_name': forms.TextInput(
@@ -94,22 +94,22 @@ class StaffForm(forms.ModelForm):
 
 class user_student(UserCreationForm):
     password1 = forms.CharField(
-        label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+        label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control mb-5', 'placeholder': 'type strong password'}))
     password2 = forms.CharField(
-        label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+        label='Password(again)', widget=forms.PasswordInput(attrs={'class': 'form-control mb-5', 'placeholder': 'confirm password'}))
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email']
+        fields = ['username',  'email']
         labels = {'first_name': 'First Name',
                   'last_name': 'Last Name', 'email': 'Email', }
-        widgets = {'username': forms.TextInput(attrs={'class': 'form-control'}), 'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-                   'last_name': forms.TextInput(attrs={'class': 'form-control'}), 'email': forms.EmailInput(attrs={'class': 'form-control'}), }
+        widgets = {'username': forms.TextInput(attrs={'class': 'form-control mb-5 ', 'placeholder': 'username'}),
+                   'email': forms.EmailInput(attrs={'class': 'form-control mb-5', 'placeholder': 'type valid email'}), }
 
 
 class Login_Form(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(
-        attrs={'class': 'form-control textbox-dg'}))
+        attrs={'class': 'form-control textbox-dg', 'placeholder': 'username'}))
     password = forms.CharField(label='Password', strip=False, widget=forms.PasswordInput(
         attrs={'class': 'form-control textbox-dg', 'autocomplete': 'current-password'}))
 

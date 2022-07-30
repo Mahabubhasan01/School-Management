@@ -4,9 +4,10 @@
 <!-- Topic Cards -->
 <div id="cards_landscape_wrap-2">
   <div class="container">
+    {% if user.is_superuser %}
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-       <a href="{%url 'profile'%}">
+        <a href="{%url 'profile'%}">
           <div class="card-flyer">
             <div class="text-box">
               <div class="image-box">
@@ -146,10 +147,7 @@
           <div class="card-flyer">
             <div class="text-box">
               <div class="image-box">
-                <img
-                  src="https://i.ibb.co/qkJpgyP/calendar.png"
-                  alt=""
-                />
+                <img src="https://i.ibb.co/qkJpgyP/calendar.png" alt="" />
               </div>
               <div class="text-container">
                 <h6>Calender</h6>
@@ -230,8 +228,133 @@
           </div>
         </a>
       </div>
+      {% else %}
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="{%url 'profile'%}">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img src="https://i.ibb.co/fpFZyHg/profile.png" alt="" />
+                </div>
+                <div class="text-container">
+                  <h6>My Profile</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="{% url 'result_manager' %}">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img
+                    src="              https://i.ibb.co/yFGTqwn/result.png
+                    "
+                    alt=""
+                  />
+                </div>
+                <div class="text-container">
+                  <h6>My Result</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="{% url 'fee_management' %}">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img
+                    src="              https://i.ibb.co/nCG7cqx/payment.png
+                    "
+                    alt=""
+                  />
+                </div>
+                <div class="text-container">
+                  <h6>Make payment</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="{% url 'calendar' %}">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img src="https://i.ibb.co/qkJpgyP/calendar.png" alt="" />
+                </div>
+                <div class="text-container">
+                  <h6>Calender</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img
+                    src="https://i.ibb.co/h79kf6G/undraw-Online-friends-re-eqaj.png"
+                    alt=""
+                  />
+                </div>
+                <div class="text-container">
+                  <h6>Due Bills</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img
+                    src="https://i.ibb.co/QcFv82d/undraw-Investment-data-re-sh9x.png
+                   "
+                    alt=""
+                  />
+                </div>
+                <div class="text-container">
+                  <h6> Paid Expenses</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <a href="{%url 'change_password'%}">
+            <div class="card-flyer">
+              <div class="text-box">
+                <div class="image-box">
+                  <img
+                    src="https://i.ibb.co/VY1JKsF/password.png
+                    "
+                    alt=""
+                  />
+                </div>
+                <div class="text-container">
+                  <h6>Reset Password</h6>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
 
-{% endblock content %}
+  {% endblock content %}
+</div>

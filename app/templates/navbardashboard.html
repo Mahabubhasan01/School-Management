@@ -688,6 +688,7 @@
           <div class="scrollbar-sidebar">
             <div class="app-sidebar__inner">
             
+                {% if user.is_superuser %}
                 <ul class="vertical-nav-menu">
                   <li class="app-sidebar__heading">Dashboards</li>
                   <li>
@@ -703,7 +704,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="{%url 'profile'%}" class="fs-5">
+                    <a href="{%url 'profile' %}" class="fs-5">
                       <i class="metismenu-icon pe-7s-rocket"></i>
                       Profile
                     </a>
@@ -1125,6 +1126,204 @@
                     </a>
                   </li>
                 </ul>
+                {% else %}
+                <ul class="vertical-nav-menu">
+                  <li class="app-sidebar__heading">Dashboards</li>
+                  <li>
+                    <a href="{%url 'dashboard'%}" class="mm-active fs-3">
+                      <i class="metismenu-icon pe-7s-rocket"></i>
+                      Dashboard
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="{%url 'profile' %}" class="fs-5">
+                      <i class="metismenu-icon pe-7s-rocket"></i>
+                      Profile
+                    </a>
+                  </li>
+                  <li class="app-sidebar__heading">Management</li>
+                  <li>
+                    <a href="#"class='fs-5'>
+                      <i class="metismenu-icon pe-7s-diamond"></i>
+                      Subject Managment
+                      <i
+                        class="metismenu-state-icon pe-7s-angle-down caret-left"
+                      ></i>
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="elements-buttons-standard.html">
+                          <i class="metismenu-icon"></i>
+                          Buttons
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-dropdowns.html">
+                          <i class="metismenu-icon"> </i>Dropdowns
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-icons.html">
+                          <i class="metismenu-icon"> </i>Icons
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-badges-labels.html">
+                          <i class="metismenu-icon"> </i>Badges
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-cards.html">
+                          <i class="metismenu-icon"> </i>Cards
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-list-group.html">
+                          <i class="metismenu-icon"> </i>List Groups
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-navigation.html">
+                          <i class="metismenu-icon"> </i>Navigation Menus
+                        </a>
+                      </li>
+                      <li>
+                        <a href="elements-utilities.html">
+                          <i class="metismenu-icon"> </i>Utilities
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"class='fs-5'>
+                      <i class="metismenu-icon pe-7s-diamond"></i>
+                      Result Management
+                      <i
+                        class="metismenu-state-icon pe-7s-angle-down caret-left"
+                      ></i>
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="{% url 'class_six_result' %}">
+                          <i class="metismenu-icon"></i>
+                          Class Six Result
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_seven_result' %}">
+                          <i class="metismenu-icon"> </i>Class Seven Result
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_eight_result' %}">
+                          <i class="metismenu-icon"> </i>Class Eight Result
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_nine_result' %}">
+                          <i class="metismenu-icon"> </i>Class Nine Result
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_ten_result' %}">
+                          <i class="metismenu-icon"> </i>Class Ten Result
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'ssc_candidate_result' %}">
+                          <i class="metismenu-icon"> </i>Ssc Candidate Result
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+
+                  <li>
+                    <a href="#"class='fs-5'>
+                      <i class="metismenu-icon pe-7s-diamond"></i>
+                    Fee Management
+                      <i
+                        class="metismenu-state-icon pe-7s-angle-down caret-left"
+                      ></i>
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="{% url 'class_six' %}">
+                          <i class="metismenu-icon"></i>
+                          Class Six
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_seven' %}">
+                          <i class="metismenu-icon"> </i>Class Seven
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_eight' %}">
+                          <i class="metismenu-icon"> </i>Class Eight
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_nine' %}">
+                          <i class="metismenu-icon"> </i>Class Nine
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'class_ten' %}">
+                          <i class="metismenu-icon"> </i>Class Ten
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'ssc_candidate' %}">
+                          <i class="metismenu-icon"> </i>Ssc Candidate
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="app-sidebar__heading">Widgets</li>
+                  <li>
+                    <a href="dashboard-boxes.html">
+                      <i class="metismenu-icon pe-7s-display2"></i>
+                      Class Attendence
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="forms-controls.html">
+                      <i class="metismenu-icon pe-7s-mouse"> </i>Calender
+                    </a>
+                  </li>
+                  <li>
+                    <a href="forms-layouts.html">
+                      <i class="metismenu-icon pe-7s-eyedropper"> </i>Outstanding Bills
+                    </a>
+                  </li>
+                  <li>
+                    <a href="forms-validation.html">
+                      <i class="metismenu-icon pe-7s-pendrive"> </i>Manage Expenses
+                    </a>
+                  </li>
+                  <li class="app-sidebar__heading">Settings</li>
+                  <li>
+                    <a
+                      href="{% url 'change_password' %}"class='fs-5'
+                    >
+                      <i class="metismenu-icon pe-7s-graph2"> </i>
+                      Reset Password
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{%url 'logout'%}"class='fs-5 fw-semibold'
+                    >
+                      <i class="metismenu-icon pe-7s-graph2"> </i>
+                      SignOut
+                    </a>
+                  </li>
+                </ul>
+                {% endif %}
               
             </div>
           </div>
