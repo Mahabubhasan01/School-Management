@@ -1,1 +1,1 @@
-web: waitrees-server --port=$PORT school.wsgi:application 
+web: gunicorn school.wsgi --log-file -
