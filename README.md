@@ -21,6 +21,8 @@ School-Management-System(FULL-STACK-PROJECT) LIVE LINK | GitHub Repository
 ![](https://i.ibb.co/qRM2T9r/https-pacific-reef-46961-herokuapp-com-staff-login.png)
 ![](https://i.ibb.co/f2vmCW6/https-pacific-reef-46961-herokuapp-com-student-manager.png)
 ![](https://i.ibb.co/X7dPBt9/https-pacific-reef-46961-herokuapp-com-subject-manager.png)
-![](https://i.ibb.co/jfKDLHM/Student-Form.png)
+![](https://i.ibb.co/0MRQ6Bq/Student-Form.png)
+
+
         
         
